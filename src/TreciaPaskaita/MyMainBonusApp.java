@@ -1,7 +1,7 @@
 package TreciaPaskaita;
 
 
-import java.io.*;
+/*import java.io.*;
 
 public class MyMainBonusApp {
     public static void main(String[] args){
@@ -32,4 +32,4 @@ for (people people : readPersonFile()){
 
         return peoples;
     }
-}
+}*/
