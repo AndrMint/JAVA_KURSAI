@@ -1,5 +1,6 @@
 package sestaPaskaita;
 
+import utils.QueryUtils;
 import utils.jdbcUtils;
 
 import java.sql.*;
@@ -13,23 +14,7 @@ public class MyMainApp01 {
         Connection connection = jdbcUtils.getConnection();
 
         ResultSet resultSet = jdbcUtils.getResultSet(connection, "SELECT * FROM students");
-        if (resultSet != null){
-            try {
-                while (resultSet.next()){      //tikris tol, kol visus perziures
-                    StringBuilder sb = new StringBuilder();
-                    sb.append("id=").append(resultSet.getInt("id")).append(", name=")
-                            .append(resultSet.getString("name")).append(", surname=")
-                            .append(resultSet.getString(3)).append(", phone=")
-                    .append(resultSet.getString("phone")).append(", email=")
-                    .append(resultSet.getString("email"));
-
-                    System.out.println(sb.toString());
-                }
-
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
+        QueryUtils.printResultSet(resultSet);
 
     }
 }
